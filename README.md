@@ -41,6 +41,15 @@ klasörüne indirir ve `bash araclar/yayinla.sh` çalıştırır. Betik `akis.js
 yeniden üretir; içerik değiştiyse yalnızca o dosyayı kaydedip GitHub'a gönderir.
 Yani bir gün beğendiklerin ertesi sabah sitede görünür.
 
+### "Şimdi güncelle" tuşu
+
+Özel sayfanın üstündeki tuş, veritabanına `meta/istek` kaydı yazar (sayfa Claude'u
+kendisi çalıştıramaz). `yapay-zeka-akisim-istek` görevi 07:00–24:00 arası her
+15 dakikada bu kayda bakar; istek varsa sabah görevinin talimatlarını uygular,
+bitince kaydı "tamam" yapar ve sayfa kaç yeni içerik geldiğini gösterir. Aynı gün
+ikinci kez çalışınca yalnızca son güncellemeden beri çıkanlara bakar. Claude
+uygulaması açık olmalı.
+
 ## Sıradaki adımlar
 
 1. Alan adı almak ve GitHub Pages'e bağlamak (DNS ayarı).
