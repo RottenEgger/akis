@@ -5,3 +5,5 @@ __pycache__/
 .denetci/
 # Özel "mutfak" sayfasının kaynağı yerelde kalır
 yz-akisim.html
+# Sabah görevinin artifact verisini indirdiği geçici klasör
+.disa-aktarim/

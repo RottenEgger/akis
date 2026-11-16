@@ -59,6 +59,17 @@ def main() -> None:
     secilenler.sort(key=lambda x: (x.get("order", 99), x.get("id", "")))
     secilenler.sort(key=lambda x: x.get("day", ""), reverse=True)
 
+    # Güvenlik kemeri: dışa aktarım boş ya da bozuksa siteyi boşaltma.
+    if not secilenler:
+        sys.exit("Hiç seçili içerik bulunamadı; dışa aktarım eksik olabilir. akis.json değiştirilmedi.")
+
+    # İçerik aynıysa dosyaya hiç dokunma; böylece boş yere "güncelleme" gönderilmez.
+    if CIKTI.exists():
+        eski = json.loads(CIKTI.read_text(encoding="utf-8")).get("icerikler")
+        if eski == secilenler:
+            print(f"Değişiklik yok ({len(secilenler)} içerik).")
+            return
+
     CIKTI.parent.mkdir(parents=True, exist_ok=True)
     CIKTI.write_text(json.dumps({
         "guncellendi": datetime.now(timezone.utc).isoformat(timespec="minutes"),
