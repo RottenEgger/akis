@@ -27,8 +27,13 @@ python3 -m http.server 8765 --directory docs
 
 Sonra tarayıcıda http://127.0.0.1:8765 adresini aç.
 
+## Yayın
+
+GitHub Pages, `main` dalındaki `docs/` klasörünü yayınlar:
+https://rottenegger.github.io/akis/ — `main`'e her gönderimden (push) sonra
+bir iki dakika içinde güncellenir.
+
 ## Sıradaki adımlar
 
-1. Alan adı almak.
-2. GitHub deposu açıp `docs/` klasörünü GitHub Pages ya da Cloudflare Pages ile yayınlamak.
-3. Sabah görevine "akis.json'u güncelle ve gönder" adımını eklemek.
+1. Sabah görevine "akis.json'u güncelle ve gönder" adımını eklemek.
+2. Alan adı almak ve GitHub Pages'e bağlamak (DNS ayarı).
