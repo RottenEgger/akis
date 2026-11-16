@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Yapay Zekâ Seçkisi</title>
+<meta name="description" content="Yapay zekâyla yapılan ilginç işlerden her gün elle seçilmiş kısa bir seçki: kaynağı, Türkçe özeti ve senin de deneyebileceğin bir öneriyle.">
+<meta property="og:title" content="Yapay Zekâ Seçkisi">
+<meta property="og:description" content="Yapay zekâyla yapılan ilginç işlerden elle seçilmiş, Türkçe özetli bir seçki.">
+<meta name="color-scheme" content="light dark">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=JetBrains+Mono:wght@400;500&family=Onest:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Vitrin: özel akışla aynı görsel dil, ama düğme ve form yok — sadece okunur. */
+:root{
+  --bg:#F2F4F7; --surface:#FFFFFF; --ink:#131A25; --muted:#5A6475; --line:#DCE1E9;
+  --accent:#2C47D6; --accent-soft:#E5E9FC; --try:#FFF3D1; --try-ink:#634500;
+  --t-claude:#C2410C; --t-araclar:#0E7490; --t-egitim:#15803D; --t-farkli:#A21CAF; --t-gelisme:#475569; --t-ozellik:#4338CA;
+  --f-display:"Bricolage Grotesque", "Avenir Next", system-ui, sans-serif;
+  --f-body:"Onest", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --f-mono:"JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D121A; --surface:#151C27; --ink:#E6EBF2; --muted:#97A2B4; --line:#263042;
+    --accent:#8FA3FF; --accent-soft:#1D2646; --try:#2B2410; --try-ink:#F0D488;
+    --t-claude:#FB923C; --t-araclar:#22D3EE; --t-egitim:#4ADE80; --t-farkli:#E879F9; --t-gelisme:#A3B1C6; --t-ozellik:#A5B4FC;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D121A; --surface:#151C27; --ink:#E6EBF2; --muted:#97A2B4; --line:#263042;
+  --accent:#8FA3FF; --accent-soft:#1D2646; --try:#2B2410; --try-ink:#F0D488;
+  --t-claude:#FB923C; --t-araclar:#22D3EE; --t-egitim:#4ADE80; --t-farkli:#E879F9; --t-gelisme:#A3B1C6; --t-ozellik:#A5B4FC;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0; background:var(--bg); color:var(--ink); font-family:var(--f-body); font-size:16px; line-height:1.55}
+.wrap{max-width:720px; margin:0 auto; padding-block:40px 80px;
+  padding-left:max(16px, env(safe-area-inset-left, 0px)); padding-right:max(16px, env(safe-area-inset-right, 0px))}
+
+header.top{display:grid; gap:10px; margin-bottom:22px}
+.eyebrow{font-family:var(--f-mono); font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted)}
+h1{font-family:var(--f-display); font-weight:700; font-size:clamp(34px,8vw,52px); line-height:1.02; margin:0; letter-spacing:-.015em; text-wrap:balance}
+.lede{margin:0; max-width:58ch; font-size:17px; color:var(--muted)}
+.lede b{color:var(--ink); font-weight:600}
+.status{font-family:var(--f-mono); font-size:12px; color:var(--muted)}
+
+.bar{position:sticky; top:0; z-index:5; background:var(--bg); padding-block:10px; border-bottom:1px solid var(--line)}
+.filters{display:flex; gap:6px; overflow-x:auto; scrollbar-width:none; padding-bottom:2px}
+.filters::-webkit-scrollbar{display:none}
+.chip{flex:none; font:500 13px var(--f-body); color:var(--ink); background:var(--surface); border:1px solid var(--line); border-radius:999px; padding:5px 11px; cursor:pointer; display:inline-flex; align-items:center; gap:6px}
+.chip[aria-pressed="true"]{border-color:var(--accent); color:var(--accent); background:var(--accent-soft)}
+.chip .n{font-family:var(--f-mono); font-size:11px; color:var(--muted)}
+.chip.sep{margin-left:8px}
+.dot{width:8px; height:8px; border-radius:50%; flex:none; background:var(--t-gelisme)}
+.dot.claude{background:var(--t-claude)} .dot.araclar{background:var(--t-araclar)} .dot.egitim{background:var(--t-egitim)}
+.dot.farkli{background:var(--t-farkli)} .dot.gelisme{background:var(--t-gelisme)} .dot.ozellik{background:var(--t-ozellik)}
+
+.day{margin-top:30px}
+.day h2{font-family:var(--f-display); font-weight:500; font-size:19px; margin:0 0 4px; display:flex; gap:10px; align-items:baseline; flex-wrap:wrap}
+.day h2 .cnt{font-size:13px; color:var(--muted); font-family:var(--f-body)}
+.item{padding-block:18px; border-top:1px solid var(--line); display:grid; gap:8px; min-width:0}
+.meta{display:flex; flex-wrap:wrap; gap:6px 8px; align-items:center; font-size:13px; color:var(--muted)}
+.meta .topic{color:var(--ink); font-weight:500}
+.lang{font-family:var(--f-mono); font-size:10.5px; border:1px solid var(--line); border-radius:4px; padding:1px 5px; color:var(--muted)}
+.item h3{font-family:var(--f-display); font-weight:700; font-size:21px; line-height:1.25; margin:0; text-wrap:balance}
+.item h3 a{color:inherit; text-decoration:none}
+.item h3 a:hover{text-decoration:underline; text-decoration-color:var(--accent); text-underline-offset:3px}
+.sum{margin:0; max-width:65ch}
+.try{background:var(--try); color:var(--try-ink); border-radius:8px; padding:9px 12px; font-size:15px; max-width:65ch}
+.try b{font-weight:600; margin-right:4px}
+.go{font-size:14px; font-weight:500; color:var(--accent); text-decoration:none; justify-self:start}
+.go:hover{text-decoration:underline}
+a:focus-visible, button:focus-visible{outline:2px solid var(--accent); outline-offset:2px; border-radius:4px}
+
+.empty{margin-top:36px; padding:22px; border:1px dashed var(--line); border-radius:10px; color:var(--muted)}
+footer{margin-top:56px; padding-top:18px; border-top:1px solid var(--line); font-size:14px; color:var(--muted); display:grid; gap:6px; max-width:65ch}
+footer b{color:var(--ink); font-weight:600}
+@media (prefers-reduced-motion: no-preference){ .item{animation:in .25s ease both} @keyframes in{from{opacity:0; transform:translateY(4px)} to{opacity:1; transform:none}} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <span class="eyebrow">Yapay zekâ · elle seçilmiş</span>
+    <h1>Gözüme çarpanlar</h1>
+    <p class="lede">Her sabah yapay zekâyla yapılan ilginç işleri tarıyorum. Burada sadece <b>beğendiklerim</b> var: kısa bir Türkçe özet, kaynağa bağlantı ve <b>senin de deneyebileceğin</b> bir öneri.</p>
+    <span class="status" id="status">Yükleniyor…</span>
+  </header>
+  <div class="bar"><div class="filters" id="filters" role="group" aria-label="Süzgeçler"></div></div>
+  <main id="feed"></main>
+  <footer>
+    <span>Özetler <b>Claude</b> ile hazırlanıyor, ben okuyup seçiyorum. Yine de bir ayrıntıdan emin olmak istersen <b>kaynağa</b> bak.</span>
+    <span>Her içeriğin hakkı kendi sahibine aittir; burada yalnızca kısa bir özet ve bağlantı var.</span>
+  </footer>
+</div>
+<script>
+const TOPICS = {
+  claude:  "Claude ile yapılanlar",
+  ozellik: "Yeni özellikler",
+  araclar: "Yeni araçlar",
+  egitim:  "Eğitimde yapay zekâ",
+  farkli:  "Farklı kullanımlar",
+  gelisme: "Büyük gelişmeler",
+};
+const S = { items: [], topic: "hepsi", lang: "hepsi" };
+
+// Küçük yardımcı: etiket oluşturur. Metni her zaman textContent ile koyar,
+// böylece dışarıdan gelen bir yazı sayfaya kod olarak sızamaz (XSS koruması).
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else n.setAttribute(k, v);
+  }
+  for (const c of kids) if (c != null) n.append(typeof c === "string" ? document.createTextNode(c) : c);
+  return n;
+}
+const safeUrl = u => (typeof u === "string" && u.startsWith("https://")) ? u : null;
+
+function dayLabel(day) {
+  const d = new Date(day + "T12:00:00");
+  return isNaN(d) ? day : d.toLocaleDateString("tr-TR", { day: "numeric", month: "long", weekday: "long" });
+}
+
+function chip(label, pressed, onClick, dotClass, count) {
+  const b = el("button", { class: "chip", type: "button", "aria-pressed": String(pressed) });
+  if (dotClass) b.append(el("span", { class: "dot " + dotClass }));
+  b.append(label);
+  if (count != null) b.append(el("span", { class: "n" }, String(count)));
+  b.addEventListener("click", onClick);
+  return b;
+}
+
+function renderFilters() {
+  const f = document.getElementById("filters");
+  f.replaceChildren();
+  const byLang = S.items.filter(i => S.lang === "hepsi" || i.lang === S.lang);
+  f.append(chip("Hepsi", S.topic === "hepsi", () => { S.topic = "hepsi"; render(); }, null, byLang.length));
+  for (const [key, label] of Object.entries(TOPICS)) {
+    const n = byLang.filter(i => i.topic === key).length;
+    if (!n) continue;
+    f.append(chip(label, S.topic === key, () => { S.topic = key; render(); }, key, n));
+  }
+  const tr = chip("Türkçe", S.lang === "tr", () => { S.lang = S.lang === "tr" ? "hepsi" : "tr"; render(); });
+  tr.classList.add("sep");
+  f.append(tr, chip("Yabancı", S.lang === "en", () => { S.lang = S.lang === "en" ? "hepsi" : "en"; render(); }));
+}
+
+function itemNode(i) {
+  const url = safeUrl(i.url);
+  const meta = el("div", { class: "meta" },
+    el("span", { class: "dot " + (TOPICS[i.topic] ? i.topic : "gelisme") }),
+    el("span", { class: "topic" }, TOPICS[i.topic] || "Diğer"),
+    i.source ? el("span", {}, "· " + i.source) : null,
+    i.author ? el("span", {}, "· " + i.author) : null,
+    el("span", { class: "lang" }, i.lang === "tr" ? "TR" : "EN"));
+  const title = el("h3", {}, url ? el("a", { href: url, target: "_blank", rel: "noopener" }, i.title || "") : (i.title || ""));
+  const node = el("article", { class: "item" }, meta, title, el("p", { class: "sum" }, i.summary || ""));
+  if (i.tryIt) node.append(el("div", { class: "try" }, el("b", {}, "Sen de dene:"), i.tryIt));
+  if (url) node.append(el("a", { class: "go", href: url, target: "_blank", rel: "noopener" }, "Kaynağa git →"));
+  return node;
+}
+
+function render() {
+  renderFilters();
+  const feed = document.getElementById("feed");
+  feed.replaceChildren();
+  const list = S.items.filter(i =>
+    (S.topic === "hepsi" || i.topic === S.topic) && (S.lang === "hepsi" || i.lang === S.lang));
+  if (!list.length) {
+    feed.append(el("div", { class: "empty" }, "Bu süzgece uyan içerik yok. Başka bir konu seç."));
+    return;
+  }
+  const days = new Map();
+  for (const i of list) { if (!days.has(i.day)) days.set(i.day, []); days.get(i.day).push(i); }
+  for (const [day, items] of days) {
+    const sec = el("section", { class: "day" },
+      el("h2", {}, dayLabel(day), el("span", { class: "cnt" }, items.length + " içerik")));
+    items.forEach(i => sec.append(itemNode(i)));
+    feed.append(sec);
+  }
+}
+
+fetch("akis.json", { cache: "no-cache" })
+  .then(r => { if (!r.ok) throw new Error(r.status); return r.json(); })
+  .then(d => {
+    S.items = Array.isArray(d.icerikler) ? d.icerikler : [];
+    const t = new Date(d.guncellendi);
+    document.getElementById("status").textContent =
+      S.items.length + " içerik · son güncelleme " +
+      (isNaN(t) ? "bilinmiyor" : t.toLocaleString("tr-TR", { day: "numeric", month: "long", hour: "2-digit", minute: "2-digit" }));
+    render();
+  })
+  .catch(() => {
+    document.getElementById("status").textContent = "İçerikler şu an yüklenemedi. Biraz sonra tekrar dene.";
+  });
+</script>
+</body>
+</html>

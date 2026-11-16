@@ -1,0 +1,7 @@
+# Yerel dosyalar — depoya girmez
+.DS_Store
+__pycache__/
+.claude/
+.denetci/
+# Özel "mutfak" sayfasının kaynağı yerelde kalır
+yz-akisim.html
