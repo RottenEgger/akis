@@ -12,6 +12,7 @@ Günlük yapay zekâ akışının **herkese açık, salt okunur** sayfası.
 | `docs/index.html` | Vitrin sayfası (düğme/form yok, sadece okur) |
 | `docs/akis.json` | Sayfanın gösterdiği içerikler |
 | `araclar/vitrin_json.py` | Artifact'ten dışa aktarılan veriden `akis.json` üretir |
+| `araclar/altyazi.py` | Bir YouTube videosunun altyazısını düz metne çevirir (sabah görevi videoları bundan özetler; çıktı `.altyazi/`, depoya girmez) |
 
 ## Gizlilik kuralı
 
