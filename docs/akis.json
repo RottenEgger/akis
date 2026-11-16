@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-16T09:37+00:00",
+ "guncellendi": "2026-11-16T15:26+00:00",
  "icerikler": [
   {
    "id": "2026-11-16-claudedevs-tema-modlari",
@@ -117,6 +117,19 @@
    "day": "2026-11-16",
    "order": 4,
    "tryIt": "Bir sonraki isteğinde Claude'a önce beğendiğin iki eski çalışmanı göster, sonra 'bunların iyi yanlarını birleştiren yeni bir tane yap, kendi fikirlerini de ekle' de."
+  },
+  {
+   "id": "2026-11-16-gally-yapay-zeka-caginda-anlam",
+   "title": "Bir profesör, Claude'a iki ay boyunca tek başına araştırma yaptırdı",
+   "summary": "Tokyo Üniversitesi'nde uzun yıllar ders vermiş çevirmen ve sözlükçü Tom Gally, Claude Code'u her 4 saatte bir kendiliğinden uyanan bir göreve bağladı ve ona tek bir soru verdi: 'Yapay zekâ çağında anlam nedir?' Claude iki ay boyunca makale okudu, kendi deneylerini tasarlayıp yaptı ve her şeyi bir wikiye yazdı. Gally sonuç için 'Bunu bir doktora adayı getirseydi hemen kabul ederdik' diyor, ama asıl sorunun bundan sonra başladığını anlatıyor.",
+   "url": "https://www.youtube.com/watch?v=TE8PWs_m3_s",
+   "source": "YouTube",
+   "author": "Tom Gally",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-16",
+   "order": 13,
+   "tryIt": "Merak ettiğin küçük bir soruyu seç ve Claude'a bir hafta boyunca her gün kısa bir araştırma notu ekleyeceği bir dosya tut. Hafta sonunda 'bunu bana sade bir dille özetle' de ve neyin gerçekten yeni olduğuna kendin karar ver."
   },
   {
    "id": "2026-11-15-domino-rally-anne-hata-bildirimi",
