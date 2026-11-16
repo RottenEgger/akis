@@ -42,7 +42,7 @@ class KasaNotlariTesti(unittest.TestCase):
         self.assertEqual(dosya.name, "Kaydedilen.md")
         metin = dosya.read_text(encoding="utf-8")
         for parca in ["Özet: kısa.", "**Neden ilginç:** Çünkü güzel.", "**Sen de dene:** Şunu dene.",
-                      "**Benim notum:** Derste dene", "İlgili: [[YZ Akış]]", 'akis_id: "a"']:
+                      "**Benim notum:** Derste dene", kn.NOT_BAS, kn.NOT_SON, "İlgili: [[YZ Akış]]", 'akis_id: "a"']:
             self.assertIn(parca, metin)
 
     def test_https_olmayan_yazilmaz(self):
@@ -83,6 +83,38 @@ class KasaNotlariTesti(unittest.TestCase):
         kn.yaz(self.girdi, self.hedef)
         metin = self.notlar()[0].read_text(encoding="utf-8")
         self.assertIn('yazar: "Ali: \\"usta\\""', metin)
+
+    def test_sonradan_eklenen_not_kasaya_eklenir(self):
+        self.ekle(icerik("a", "Bir haber"), {"saved": True})
+        kn.yaz(self.girdi, self.hedef)
+        [dosya] = self.notlar()
+        dosya.write_text(dosya.read_text(encoding="utf-8") + "Obsidian'da yazdığım satır\n", encoding="utf-8")
+        self.ekle(icerik("a", "Bir haber"), {"saved": True, "note": "Projeme bağla"})
+        self.assertEqual(kn.notlari_guncelle(self.girdi, self.hedef), 1)
+        metin = dosya.read_text(encoding="utf-8")
+        self.assertIn("Obsidian'da yazdığım satır", metin)
+        self.assertIn("**Benim notum:** Projeme bağla", metin)
+        self.assertEqual(kn.notlari_guncelle(self.girdi, self.hedef), 0)  # aynıysa dokunmaz
+
+    def test_degisen_not_sadece_kendi_bolumunu_degistirir(self):
+        self.ekle(icerik("a", "Bir haber"), {"saved": True, "note": "İlk not"})
+        kn.yaz(self.girdi, self.hedef)
+        [dosya] = self.notlar()
+        dosya.write_text("Üstte kendi yazım\n" + dosya.read_text(encoding="utf-8"), encoding="utf-8")
+        self.ekle(icerik("a", "Bir haber"), {"saved": True, "note": "İkinci not\nikinci satır"})
+        self.assertEqual(kn.notlari_guncelle(self.girdi, self.hedef), 1)
+        metin = dosya.read_text(encoding="utf-8")
+        self.assertTrue(metin.startswith("Üstte kendi yazım"))
+        self.assertNotIn("İlk not", metin)
+        self.assertIn("**Benim notum:** İkinci not\nikinci satır", metin)
+        self.assertEqual(metin.count(kn.NOT_BAS), 1)
+
+    def test_sayfada_not_silinirse_kasadaki_silinmez(self):
+        self.ekle(icerik("a", "Bir haber"), {"saved": True, "note": "Kalsın"})
+        kn.yaz(self.girdi, self.hedef)
+        self.ekle(icerik("a", "Bir haber"), {"saved": True, "note": ""})
+        self.assertEqual(kn.notlari_guncelle(self.girdi, self.hedef), 0)
+        self.assertIn("Kalsın", self.notlar()[0].read_text(encoding="utf-8"))
 
     def test_disa_aktarim_yoksa_sifir(self):
         self.assertEqual(kn.yaz(self.girdi / "yok", self.hedef), 0)

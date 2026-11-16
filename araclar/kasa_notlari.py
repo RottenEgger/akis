@@ -6,7 +6,9 @@ Girdi: Artifact veritabanından dışa aktarılmış klasör (vitrin_json.py ile
 Çıktı: <hedef>/<haber başlığı>.md — sadece "Kaydet" (saved: true) dediklerin.
 
 Kasa özeldir; bu yüzden vitrine gitmeyen "Neden ilginç" ve "Sen de dene" de yazılır.
-Kasada zaten olan nota (akis_id aynı) hiç dokunulmaz; hiçbir şey silinmez.
+Kasada zaten olan notta (akis_id aynı) yalnızca "Benim notum" bölümü
+(işaretli iki yorum satırının arası) sayfadaki notla güncellenir; notun geri
+kalanına, Obsidian'da yazdıklarına dokunulmaz. Hiçbir şey silinmez.
 
 Kullanım:  python3 araclar/kasa_notlari.py <girdi-klasörü> <hedef-klasör>
 """
@@ -17,7 +19,11 @@ from pathlib import Path
 
 KOTU_KARAKTERLER = re.compile(r'[/\\:*?"<>|#^\[\]]')
 DEFTER_ADI = ".kasa-yazilanlar.txt"  # girdi klasörünün yanında durur, depoya girmez
-KIMLIK_SATIRI =re.compile(r'^akis_id:\s*"?(.*?)"?\s*$', re.MULTILINE)
+KIMLIK_SATIRI = re.compile(r'^akis_id:\s*"?(.*?)"?\s*$', re.MULTILINE)
+# Sayfadaki not kutusundan gelen bölüm bu iki satırın arasında durur.
+NOT_BAS = "<!-- yz-akis-notum: bu bölüm sayfadaki not kutusundan gelir -->"
+NOT_SON = "<!-- /yz-akis-notum -->"
+NOT_BOLUMU = re.compile(re.escape(NOT_BAS) + r".*?" + re.escape(NOT_SON), re.DOTALL)
 
 
 def oku(klasor: Path) -> dict:
@@ -29,14 +35,24 @@ def oku(klasor: Path) -> dict:
     return sonuc
 
 
-def mevcut_kimlikler(hedef: Path) -> set:
-    """Kasadaki notların başındaki akis_id değerlerini toplar (tekrar yazmamak için)."""
-    kimlikler = set()
+def kasadaki_notlar(hedef: Path) -> dict:
+    """Kasadaki notları {akis_id: dosya yolu} olarak bulur."""
+    bulunanlar = {}
     for dosya in hedef.glob("*.md"):
         bulunan = KIMLIK_SATIRI.search(dosya.read_text(encoding="utf-8"))
         if bulunan:
-            kimlikler.add(bulunan.group(1))
-    return kimlikler
+            bulunanlar[bulunan.group(1)] = dosya
+    return bulunanlar
+
+
+def mevcut_kimlikler(hedef: Path) -> set:
+    """Kasadaki notların başındaki akis_id değerlerini toplar (tekrar yazmamak için)."""
+    return set(kasadaki_notlar(hedef))
+
+
+def not_bolumu(metin: str) -> str:
+    """Sayfadaki notu, işaretli bölüm olarak hazırlar (birden çok satır olabilir)."""
+    return f"{NOT_BAS}\n**Benim notum:** {metin.strip()}\n{NOT_SON}"
 
 
 def dosya_adi(baslik: str, hedef: Path) -> Path:
@@ -70,10 +86,11 @@ def not_metni(icerik: dict, oy: dict) -> str:
         "",
     ]
     for etiket, alan in [("Neden ilginç", icerik.get("why")),
-                         ("Sen de dene", icerik.get("tryIt")),
-                         ("Benim notum", oy.get("note"))]:
+                         ("Sen de dene", icerik.get("tryIt"))]:
         if alan:
             satirlar += [f"**{etiket}:** {alan}", ""]
+    if str(oy.get("note") or "").strip():
+        satirlar += [not_bolumu(str(oy["note"])), ""]
     kaynak = " · ".join(x for x in [icerik.get("source"), icerik.get("author")] if x)
     satirlar += [f"🔗 [{kaynak or 'Kaynağa git'}]({icerik.get('url')})", "",
                  "İlgili: [[YZ Akış]]", ""]
@@ -111,11 +128,39 @@ def yaz(girdi: Path, hedef: Path) -> int:
     return yazilan
 
 
+def notlari_guncelle(girdi: Path, hedef: Path) -> int:
+    """Kasada duran notların "Benim notum" bölümünü sayfadaki notla eşitler.
+
+    Sayfada not yoksa hiçbir şey yapılmaz (kasadaki metin silinmez). Bölüm yoksa
+    notun sonuna eklenir. Güncellenen not sayısını döndürür.
+    """
+    if not (girdi / "feedback").is_dir() or not hedef.is_dir():
+        return 0
+    oylar = oku(girdi / "feedback")
+    guncellenen = 0
+    for kimlik, dosya in kasadaki_notlar(hedef).items():
+        yeni = str((oylar.get(kimlik) or {}).get("note") or "").strip()
+        if not yeni:
+            continue
+        eski_metin = dosya.read_text(encoding="utf-8")
+        bolum = not_bolumu(yeni)
+        if NOT_BOLUMU.search(eski_metin):
+            yeni_metin = NOT_BOLUMU.sub(lambda _: bolum, eski_metin, count=1)
+        else:
+            yeni_metin = eski_metin.rstrip("\n") + "\n\n" + bolum + "\n"
+        if yeni_metin != eski_metin:
+            dosya.write_text(yeni_metin, encoding="utf-8")
+            guncellenen += 1
+    return guncellenen
+
+
 def main() -> None:
     if len(sys.argv) != 3:
         sys.exit("Kullanım: python3 araclar/kasa_notlari.py <girdi-klasörü> <hedef-klasör>")
-    sayi = yaz(Path(sys.argv[1]), Path(sys.argv[2]))
-    print(f"Kasa: {sayi} yeni not yazıldı.")
+    girdi, hedef = Path(sys.argv[1]), Path(sys.argv[2])
+    sayi = yaz(girdi, hedef)
+    guncellenen = notlari_guncelle(girdi, hedef)
+    print(f"Kasa: {sayi} yeni not yazıldı, {guncellenen} notun 'Benim notum' bölümü güncellendi.")
 
 
 if __name__ == "__main__":
