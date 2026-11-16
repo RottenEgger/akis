@@ -33,7 +33,13 @@ GitHub Pages, `main` dalındaki `docs/` klasörünü yayınlar:
 https://rottenegger.github.io/akis/ — `main`'e her gönderimden (push) sonra
 bir iki dakika içinde güncellenir.
 
+## Otomatik güncelleme
+
+Sabah görevi (`yapay-zeka-akisim`) son adımda artifact verisini `.disa-aktarim/`
+klasörüne indirir ve `bash araclar/yayinla.sh` çalıştırır. Betik `akis.json`'u
+yeniden üretir; içerik değiştiyse yalnızca o dosyayı kaydedip GitHub'a gönderir.
+Yani bir gün beğendiklerin ertesi sabah sitede görünür.
+
 ## Sıradaki adımlar
 
-1. Sabah görevine "akis.json'u güncelle ve gönder" adımını eklemek.
-2. Alan adı almak ve GitHub Pages'e bağlamak (DNS ayarı).
+1. Alan adı almak ve GitHub Pages'e bağlamak (DNS ayarı).
