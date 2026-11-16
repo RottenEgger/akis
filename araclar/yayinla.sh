@@ -5,6 +5,10 @@
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
+# Önce "Kaydet" dediklerini İkinci Beyin'e not olarak yaz. Hata verirse vitrin yine güncellenir.
+python3 -I araclar/kasa_notlari.py .disa-aktarim "$HOME/Desktop/İkinci Beyin/50 Kaynaklar/YZ Akış" \
+  || echo "Kasa adımı başarısız oldu; vitrine devam ediliyor."
+
 python3 -I araclar/vitrin_json.py .disa-aktarim
 
 if git diff --quiet -- docs/akis.json; then
