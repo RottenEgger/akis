@@ -1,5 +1,5 @@
 {
- "guncellendi": "2026-11-16T15:26+00:00",
+ "guncellendi": "2026-11-17T05:11+00:00",
  "icerikler": [
   {
    "id": "2026-11-16-claudedevs-tema-modlari",
@@ -130,6 +130,19 @@
    "day": "2026-11-16",
    "order": 13,
    "tryIt": "Merak ettiğin küçük bir soruyu seç ve Claude'a bir hafta boyunca her gün kısa bir araştırma notu ekleyeceği bir dosya tut. Hafta sonunda 'bunu bana sade bir dille özetle' de ve neyin gerçekten yeni olduğuna kendin karar ver."
+  },
+  {
+   "id": "2026-11-16-anadolu-ai-lab-tarayicida-kodlama",
+   "title": "Anadolu Üniversitesi'nden 26 bin öğrenciye tarayıcıda kodlama laboratuvarı",
+   "summary": "Anadolu Üniversitesi, Açıköğretim'deki Yapay Zeka Destekli Kodlama ön lisans programının yaklaşık 26 bin öğrencisi için AI Lab'ı (ailab.anadolu.edu.tr) açtı. Kitaptaki her ünitenin alıştırmaları tarayıcıda, bilgisayara hiçbir şey kurmadan yazılıp hemen çalıştırılıyor; ödevler otomatik puanlanıyor, hatalı kodda yapay zekâ ipucu veriyor ve istersen yeni alıştırma ürettirebiliyorsun. İlk kez 12 Kasım'daki Python ile Programlama canlı dersinde kullanıldı.",
+   "url": "https://www.haberler.com/egitim/anadolu-universitesi-nin-ai-lab-i-yaklasik-26-bin-20432654-haberi/",
+   "source": "Haberler.com (İHA)",
+   "author": "İhlas Haber Ajansı",
+   "lang": "tr",
+   "topic": "egitim",
+   "day": "2026-11-16",
+   "order": 15,
+   "tryIt": "Tarayıcıda çalışan ücretsiz bir Python ortamında bir alıştırmayı bilerek yanlış yaz ve hatayı bir yapay zekâya açıklat; ipucunun seni cevaba götürüp götürmediğine bak."
   },
   {
    "id": "2026-11-15-domino-rally-anne-hata-bildirimi",
