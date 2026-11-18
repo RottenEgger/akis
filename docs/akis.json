@@ -1,6 +1,32 @@
 {
- "guncellendi": "2026-11-18T06:03+00:00",
+ "guncellendi": "2026-11-18T14:46+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-18-claude-tatli-patates-ciftligi",
+   "title": "Şehirli bir biyolog, Slovenya'daki çiftlikte bir sezon boyunca Claude'la tatlı patates yetiştirdi",
+   "summary": "Viyanalı bir biyolog, eşinin ailesinin Slovenya'daki çiftliğinde tatlı patates yetiştirmeye karar veriyor; ilk iki yıl her şey ters gidiyor. Bu sezon filizlenmeyen yumruların fotoğraflarını Claude'a gönderip ne yapacağını soruyor, Claude araştırıp bir yöntem öneriyor, bitkilerde besin eksikliği çıkınca yöntemi birlikte düzeltiyorlar. Sonunda en iyi hasadını alıyor; video Anthropic'in kendi kanalında ve kısa bir tanıtım filmi tadında.",
+   "url": "https://www.youtube.com/watch?v=RRj07Hc3ikU",
+   "source": "YouTube",
+   "author": "Claude (Anthropic)",
+   "lang": "en",
+   "topic": "farkli",
+   "day": "2026-11-18",
+   "order": 3,
+   "tryIt": "Evdeki bir bitkinin ya da bir sorunun fotoğrafını Claude'a gönder, önerisini bir hafta boyunca küçük bir not dosyasında takip et ve sonucu ona geri bildir."
+  },
+  {
+   "id": "2026-11-17-migdal-varsova-voksel",
+   "title": "Varşova'nın içinde gezilebilen voksel haritası: mevsim değiştir, yayaya bürün",
+   "summary": "Piotr Migdał, Claude Opus 5.5 ile Varşova'nın merkezini voksellerden (Minecraft'taki gibi küçük küplerden) oluşan, tarayıcıda gezilebilen bir 3B haritaya çevirdi. Mevsimi ve havayı değiştirebiliyor, sokaktaki bir yayanın gözünden dolaşabiliyorsun. Veriler OpenStreetMap'ten (açık harita verisi), Polonya'nın LiDAR (lazerle yükseklik ölçümü) taramalarından ve belediyenin ağaç listesinden geliyor.",
+   "url": "https://x.com/pmigdal/status/2116231554372403336",
+   "source": "X",
+   "author": "Piotr Migdał (@pmigdal)",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-17",
+   "order": 1,
+   "tryIt": "Canlı demoyu aç, sonra Claude'a 'mahallemdeki üç sokağı OpenStreetMap verisinden küp küp çizen basit bir three.js sayfası yap' de."
+  },
   {
    "id": "2026-11-17-gorunmez-kentler-tek-prompt",
    "title": "Üç cümlelik prompt, altı saat süre: Görünmez Kentler'in 55 şehri",
