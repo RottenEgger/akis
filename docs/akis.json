@@ -1,6 +1,19 @@
 {
- "guncellendi": "2026-11-18T14:46+00:00",
+ "guncellendi": "2026-11-20T07:06+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-19-voyager-1-parcalarina-ayir",
+   "title": "Voyager 1'i tarayıcıda tek bir bellek çipine kadar söküp inceleyebilirsin",
+   "summary": "Bir geliştirici, 1977'de fırlatılan iki Voyager uzay aracının şu an nerede olduğunu gösteren üç boyutlu bir site yaptı. Yolculuğu baştan izleyebiliyor, aracın nükleer pilini açabiliyor, veri bilgisayarının içine girip tek bir bellek çipine kadar inebiliyor ve o anda hangi çanak antenin dinlediğini görebiliyorsun. Yapımcı işin büyük kısmını Claude'un yaptığını söylüyor. Bir yorumcu bazı bilgi hatalarını sıraladı; yapımcı da bir grafiğin 'makul bir tahmin' olduğunu ve bozulan çipi kendi seçtiğini kabul ediyor, yani her ayrıntıyı kesin bilgi sayma.",
+   "url": "https://rshekhar.com/voyager/",
+   "source": "Hacker News (Show HN)",
+   "author": "raj-shekhar",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-19",
+   "order": 2,
+   "tryIt": "Siteyi gez, sonra bir yapay zekâya 'bir bilgisayarın içini (işlemci, bellek, disk) tıklayınca açılan katmanlarla gösteren tek sayfalık bir three.js sahnesi yap' de."
+  },
   {
    "id": "2026-11-18-claude-tatli-patates-ciftligi",
    "title": "Şehirli bir biyolog, Slovenya'daki çiftlikte bir sezon boyunca Claude'la tatlı patates yetiştirdi",
@@ -13,6 +26,32 @@
    "day": "2026-11-18",
    "order": 3,
    "tryIt": "Evdeki bir bitkinin ya da bir sorunun fotoğrafını Claude'a gönder, önerisini bir hafta boyunca küçük bir not dosyasında takip et ve sonucu ona geri bildir."
+  },
+  {
+   "id": "2026-11-18-grand-treasure-island-ajan-oyunu",
+   "title": "Gerçek bir adayı birebir ölçekte oyuna çevirdi; kodu da modelleri de ajanlar yaptı",
+   "summary": "Bir geliştirici, San Francisco Körfezi'ndeki Treasure Island'ı gerçek boyutunda, içinde araba sürülebilen üç boyutlu bir oyuna dönüştürdü. Yazdığına göre kodu ve 3B modelleri Claude Opus 5.5 ajan ekipleri üretti; kendisi ortamı ve kuralları kurdu, çıktıları kontrol etti, oyunu denedi ve açık verinin yetmediği yerlere kendi fotoğraflarını verdi. Veriler açık harita (OpenStreetMap) ve lazerle ölçülmüş arazi kayıtlarından geliyor, oyun Godot adlı ücretsiz oyun motoruyla yapılmış; tarayıcı sürümü zorlanıyor, indirilen sürüm öneriliyor. Paylaşım çok yeni, henüz kimse yorum yazmamış ve ben oyunun sitesini açıp deneyemedim; anlatılanlar yapımcının kendi sözleri.",
+   "url": "https://news.ycombinator.com/item?id=50546796",
+   "source": "Hacker News (Show HN)",
+   "author": "phpp",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-18",
+   "order": 7,
+   "tryIt": "Paylaşımı oku ve yapımcının 'ben ne yaptım, ajanlar ne yaptı' ayrımını not et; sonra bir yapay zekâya kendi mahallenin OpenStreetMap verisinden basit bir üç boyutlu harita yapmak için hangi adımların gerektiğini sor."
+  },
+  {
+   "id": "2026-11-18-claude-desktop-surum-kanali",
+   "title": "Claude masaüstü uygulamasında artık güncelleme hızını sen seçiyorsun",
+   "summary": "Claude Desktop'a 'sürüm kanalı' (release channel: güncellemelerin hangi sıklıkta geleceğini belirleyen ayar) seçeneği geldi. 'Stable' varsayılan; daha seyrek ama daha çok test edilmiş sürümler getiriyor. 'Latest' ise yaklaşık her gün yeni bir sürüm veriyor; yeni özellikleri erken görürsün ama hata çıkma ihtimali daha yüksek.",
+   "url": "https://support.claude.com/en/articles/10065433-install-claude-desktop#h_ac219b3bde",
+   "source": "Claude Yardım Merkezi sürüm notları",
+   "author": "Anthropic",
+   "lang": "en",
+   "topic": "ozellik",
+   "day": "2026-11-18",
+   "order": 9,
+   "tryIt": "Yardım sayfasındaki 'Choose a release channel' bölümünü aç ve hangi kanalda olduğuna bak; uygulamaya işin için güveniyorsan Stable'da kalmak daha güvenli."
   },
   {
    "id": "2026-11-17-migdal-varsova-voksel",
