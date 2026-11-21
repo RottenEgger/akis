@@ -1,6 +1,32 @@
 {
- "guncellendi": "2026-11-20T07:06+00:00",
+ "guncellendi": "2026-11-21T06:32+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-20-gally-eski-seyahat-kitaplari",
+   "title": "Tom Gally, 1914 öncesi seyahat kitaplarını Claude'a okutup ücretsiz e-kitap yapıyor",
+   "summary": "Takip ettiğin Tom Gally'nin yeni projesi travel-books, 1914'ten önce İngilizce yazılmış birinci ağızdan seyahat kitaplarını Internet Archive taramalarından okuyup web sayfası ve EPUB (e-kitap biçimi) olarak herkese açık yayınlıyor; şu an 10 kitap yayında, 25'i sırada. Kitapları Claude modelleri seçip yazıya döküyor ve denetliyor: bir model sayfayı okuyor, ikinci bir model düzeltiyor, iki okuma ayrıştığında üçüncüsü hakem oluyor ve araya bilerek hata yerleştirilmiş sayfalarla denetim yapılıyor. Proje 19 Kasım'da başladı ve zamanlanmış oturumlarla kendi kendine ilerliyor; makine okuması olduğu için küçük yazım hataları kalabilir.",
+   "url": "https://tkgally.github.io/travel-books/",
+   "source": "GitHub",
+   "author": "Tom Gally (tkgally)",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-20",
+   "order": 1,
+   "tryIt": "Siteden bir kitabın tek bir bölümünü aç, zor gelen 10 kelimeyi seç ve bir yapay zekâya 'bu kelimelerle o döneme ait 5 cümlelik basit bir okuma parçası ve 3 soru yaz' de."
+  },
+  {
+   "id": "2026-11-20-foolscap-yazmayan-yazi-uygulamasi",
+   "title": "Kitabını okuyan ama senin yerine tek kelime yazmayan yazı uygulaması",
+   "summary": "Foolscap bir yazı uygulaması: sen yazarken metnini okuyor, yan panelde karakterleri, fikirleri ve yarım kalan konuları senin kendi cümlelerinden çıkarıyor; yanında soru sorabildiğin bir ajan da var ama metnine hiçbir şey yazmıyor. Ücretsiz planda ayda 20 soru ve 1 saat sesle yazdırma var, ücretli planlar ayda 12 avrodan başlıyor. Gizlilik sayfasına göre yazdıkların model eğitiminde kullanılmıyor ve 'özel' işaretlenen kitap hiçbir yapay zekâya gönderilmiyor; ama hangi modeli kullandığını söylemiyor ve Hacker News'teki yorumcular varsayılan ayarın 'okuyabilir' olmasını sorguladı.",
+   "url": "https://foolscap.works/",
+   "source": "Hacker News (Show HN)",
+   "author": "atugard",
+   "lang": "en",
+   "topic": "araclar",
+   "day": "2026-11-20",
+   "order": 3,
+   "tryIt": "Uygulamayı kurmadan aynı fikri dene: kısa bir yazını bir yapay zekâya ver ve 'hiçbir cümlemi yeniden yazma; sadece hangi fikri yarım bıraktığımı soru olarak sor' de."
+  },
   {
    "id": "2026-11-19-voyager-1-parcalarina-ayir",
    "title": "Voyager 1'i tarayıcıda tek bir bellek çipine kadar söküp inceleyebilirsin",
