@@ -1,6 +1,58 @@
 {
- "guncellendi": "2026-11-21T06:32+00:00",
+ "guncellendi": "2026-11-22T07:02+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-21-koyunde-3b-araba-surme",
+   "title": "Eski arabasını köyünde sürmek istedi; Claude ile yarışlı, çok oyunculu bir 3B harita çıktı",
+   "summary": "Bir geliştirici, bir haftadan biraz uzun süre önce 'eski arabamı tarayıcıda kendi köyümde süreyim' diye başladığı işin yarışlar, etkinlikler, farklı arabalar ve çok oyunculu mod içeren büyük bir haritaya dönüştüğünü anlatıyor. Dünya, İngiltere hükümetinin açık LIDAR (lazerle yükseklik ölçümü) verisi ile OpenStreetMap'ten kurulmuş. Yorumlarda 'kodu okudun mu?' sorusuna 'Tam bir ürün yöneticisi gibi kaldım, tek satır koda bakmadım' diye cevap veriyor. Bir yorumcu yüklemenin yüzde 90'da takıldığını yazdı (yapımcı düzelttiğini söylüyor), bir başkası ekranın kilitlendiğini bildirdi; ben de siteyi açıp deneyemedim.",
+   "url": "https://news.ycombinator.com/item?id=50574412",
+   "source": "Hacker News (Show HN)",
+   "author": "johnwards",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-21",
+   "order": 3,
+   "tryIt": "Paylaşımdaki yorumları oku, sonra bir yapay zekâya 'yaşadığım yer için açık yükseklik verisi ve OpenStreetMap nereden alınır, bunlarla en basit gezilebilir 3B sahne nasıl kurulur?' diye sor."
+  },
+  {
+   "id": "2026-11-21-trichroma-telefondan-platform-oyunu",
+   "title": "63 bölümlük platform oyununu baştan sona telefonundan, Claude Code ile yaptı",
+   "summary": "Trichroma, ışığın rengine göre değişen mekaniklerle ilerleyen, Celeste ve Meat Boy'dan esinlenmiş 63 bölümlük bir platform oyunu. Yapımcısı fikrin, ressam kardeşinin ışığın rengiyle değişen tabloları üzerine yıllar önce yaptıkları bir sohbetten çıktığını ve oyunu 'tamamen telefonumdan, Claude Code ile' geliştirdiğini yazıyor; zamanın büyük kısmı arkadaşlarla deneme oynamaya gitmiş. Oyun ücretsiz, reklamsız ve hesap istemiyor; tarayıcıda açılıyor, telefonda çalışıyor ve ilk açılıştan sonra internetsiz de oynanıyor.",
+   "url": "https://trichroma.namirsab.dev/",
+   "source": "Hacker News (Show HN)",
+   "author": "namirsab",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-21",
+   "order": 4,
+   "tryIt": "Oyunun ilk beş bölümünü oyna ve her bölümün hangi yeni kuralı öğrettiğini not et; sonra bir yapay zekâya kendi oyun fikrin için 'her bölüm tek bir yeni şey öğretsin' ilkesiyle beş bölümlük bir sıra tasarlat."
+  },
+  {
+   "id": "2026-11-21-claude-code-easel-ve-30-gun",
+   "title": "Claude Code'da yeni: istenince grafik çizen 'easel' ve 30 güne uzayan tekrarlı görevler",
+   "summary": "Claude Code 2.1.330 (20 Kasım) ile 'easel' adında hazır bir mod (uygulamaya eklenen küçük parça) geldi: istediğinde sayıları grafik olarak çiziyor; Pro ve Max planlarında, macOS ve Linux'ta çalışıyor ve otomatik grafikler /config'ten kapatılabiliyor. Aynı sürümde tekrarlayan zamanlanmış görevler ve /loop, oturum açık kaldığı sürece 7 yerine 30 güne kadar çalışıyor; bu sürümden önce kurulanlar yine 7 günde bitiyor. Bir önceki sürüm (2.1.329) /tasks listesine zamanlanmış görevleri ekledi ve şunu not ediyor: eski sürümlerle kaydedilmiş zamanlanmış görevlerin çoğunun yeni oturumlarda yeniden zamanlanması gerekiyor.",
+   "url": "https://github.com/anthropics/claude-code/releases/tag/v2.1.330",
+   "source": "Claude Code sürüm notları",
+   "author": "Anthropic",
+   "lang": "en",
+   "topic": "ozellik",
+   "day": "2026-11-21",
+   "order": 5,
+   "tryIt": "Claude Code'u güncelle, /tasks yazıp hangi zamanlanmış görevlerin göründüğüne bak; sonra 'şu sayıları çubuk grafik olarak çiz: 2, 1, 3, 0, 2, 4, 1' diyerek easel'i dene."
+  },
+  {
+   "id": "2026-11-21-furze-daha-iyi-bot-yapmayi-birakalim",
+   "title": "Leon Furze: Okullar için 'daha iyi sohbet botu' yapmaya çalışmayı bırakalım",
+   "summary": "Eski öğretmen ve araştırmacı Leon Furze, Avustralya'da eğitim bakanlıklarının kendi adlarıyla çıkardığı 'eğitime özel' sohbet botlarının bir yapay zekâ stratejisi değil, yalnızca gösterilecek bir ürün olduğunu savunuyor. Kanıtların zayıf olduğunu söylüyor: bir değerlendirme öğrenme sonucu yerine kullanım sayısı bildirmiş; Khanmigo'nun Tennessee'deki 18 ortaokulda yapılan denemesinde öğrencilerin çoğu aracı deneyip bırakmış ve kazanım yapay zekâsız Khan Academy ile benzer çıkmış. Türkiye'de yapılan büyük bir saha deneyini de anıyor: serbestçe kullanılan GPT-4 sonraki sınav sonuçlarını düşürmüş, yalnızca ipucu veren sürüm ise bu zararı büyük ölçüde önlemiş. Önerisi yeni bot yerine altyapıya, güvenliğe ve öğretmenlerin mesleki öğrenmesine yatırım.",
+   "url": "https://leonfurze.com/2026/11/20/beyond-chatbots-better-bots/",
+   "source": "Blog",
+   "author": "Leon Furze",
+   "lang": "en",
+   "topic": "egitim",
+   "day": "2026-11-21",
+   "order": 11,
+   "tryIt": "Yazıdaki fikri kendinde dene: yeni öğrendiğin bir konuda yapay zekâya 'cevabı verme, yalnızca tek bir ipucu ver' kuralı koy ve bir hafta sonra konuyu ne kadar hatırladığına bak."
+  },
   {
    "id": "2026-11-20-gally-eski-seyahat-kitaplari",
    "title": "Tom Gally, 1914 öncesi seyahat kitaplarını Claude'a okutup ücretsiz e-kitap yapıyor",
