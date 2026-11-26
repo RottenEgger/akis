@@ -1,6 +1,45 @@
 {
- "guncellendi": "2026-11-22T07:02+00:00",
+ "guncellendi": "2026-11-26T08:35+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-25-artifact-uygulama-olarak-kur",
+   "title": "Claude'un yaptığı bir sayfayı bilgisayarına ayrı bir uygulama olarak kurabilirsin",
+   "summary": "Claude masaüstü uygulamasına 24 Kasım'da beta olarak 'Install as app' geldi: Claude'un yaptığı bir artifact (paylaşılabilir sayfa) Mac ya da Windows'ta kendi penceresi ve simgesiyle ayrı bir uygulama gibi açılıyor. Ücretsiz plan dahil bütün planlarda var; Claude Desktop'ın 6.28899.0 ya da daha yeni sürümü gerekiyor, Linux, web ve telefonda yok. Uygulama aynı artifact olduğu için sayfayı değiştirince uygulama da değişiyor; bildirim veya bilgisayara tam erişim gibi izinler ayrıca soruluyor ve yardım sayfası Anthropic'in bu uygulamaları kurulumdan önce incelemediğini hatırlatıyor.",
+   "url": "https://support.claude.com/en/articles/18516354-install-an-artifact-as-an-app",
+   "source": "Claude Yardım Merkezi",
+   "author": "Anthropic",
+   "lang": "en",
+   "topic": "ozellik",
+   "day": "2026-11-25",
+   "order": 1,
+   "tryIt": "Claude Desktop'ı güncelle, kendi yaptığın bir artifact'i ana pencerede aç, başlık menüsünden 'Install as app' de ve gereksiz izinleri verme."
+  },
+  {
+   "id": "2026-11-25-claude-crispr-benzeri-desen",
+   "title": "950 Claude ajanı 200 bin enzimi taradı, CRISPR'a benzeyen bir DNA deseni buldu",
+   "summary": "Anthropic'in kendi biyoloji laboratuvarından kısa bir videoda anlatıldığına göre, 950 Claude ajanı 21 saat boyunca büyük bir DNA veri tabanında 200 binden fazla enzimi taradı ve virüs DNA'sında daha önce fark edilmemiş tekrar eden bir desen buldu. Bu, gen düzenleme aracı CRISPR'ın başlangıcını andırıyor, çünkü CRISPR da bakterilerde fark edilen tuhaf bir tekrar deseniyle başlamıştı. Ama videonun kendisi de ne işe yaradığının bilinmediğini, çok erken olduğunu ve deneylerin sürdüğünü söylüyor; bu bir şirketin kendi tanıtımı, bağımsız bir bilimsel sonuç değil.",
+   "url": "https://www.youtube.com/shorts/ANcPabMDH14",
+   "source": "YouTube",
+   "author": "Claude (Anthropic)",
+   "lang": "en",
+   "topic": "gelisme",
+   "day": "2026-11-25",
+   "order": 6,
+   "tryIt": "Bir yapay zekâya 'CRISPR nedir ve bir DNA'da tekrar eden desen bulmak neden önemli olabilir, basitçe anlat' diye sor."
+  },
+  {
+   "id": "2026-11-24-1in8b-rastgele-hayat-oyunu",
+   "title": "Dünyadaki 8 milyar kişiden biri olarak rastgele bir hayat yaşa",
+   "summary": "Gerçek istatistiklere dayanan ücretsiz bir yaşam simülasyonu: dünyadaki insanlardan rastgele biri oluyorsun ve hayatı oynuyorsun. Yapımcı 'Opus 5.5 ile yapıldı' diyor. Milyonlarca oynanma iddiası yapımcının kendi sözü; doğrulanmadı.",
+   "url": "https://1in8b.life/en/",
+   "source": "Hacker News (Show HN)",
+   "author": "jins__earth",
+   "lang": "en",
+   "topic": "farkli",
+   "day": "2026-11-24",
+   "order": 4,
+   "tryIt": "Elindeki küçük bir veri setini 'bu veriyle oynanan bir oyun yap' diye Claude'a verip sonucu gör."
+  },
   {
    "id": "2026-11-21-koyunde-3b-araba-surme",
    "title": "Eski arabasını köyünde sürmek istedi; Claude ile yarışlı, çok oyunculu bir 3B harita çıktı",
