@@ -1,6 +1,58 @@
 {
- "guncellendi": "2026-11-26T08:35+00:00",
+ "guncellendi": "2026-11-27T08:56+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-26-bilal-turan-altin-hirsi-steam-oyunu",
+   "title": "Claude Code ile Steam'e oyun yapıyor: dört madencili Altın Hırsı",
+   "summary": "Bilal Turan, arkadaşlarla oynanan komik bir madencilik oyununu (Altın Hırsı) Claude Code, ücretsiz oyun motoru Godot ve 3B modeller için Claude Design ile nasıl yaptığını 8 dakikada adım adım gösteriyor. Kodu Claude yazıyor, hatta Claude Design'a verilecek model promptlarını da Claude hazırlıyor; Claude oyunu komut satırından açıp botlara oynatarak ekran görüntüsüyle kendisi deniyor. Oyun henüz Steam'de değil ve sesleri Claude kodla üretse de nasıl duyulduklarını ancak insan söyleyebiliyor.",
+   "url": "https://www.youtube.com/watch?v=EGroLMMPdJ0",
+   "source": "YouTube",
+   "author": "Bilal Turan",
+   "lang": "tr",
+   "topic": "claude",
+   "day": "2026-11-26",
+   "order": 1,
+   "tryIt": "Godot'nun standart sürümünü indir, boş bir klasörde Claude Code'a 'Godot ve GDScript ile blok kırıp altın toplanan en basit oyunu kur ve kendin çalıştırıp dene' de; sonra oynayıp beğenmediğin tek şeyi söyle."
+  },
+  {
+   "id": "2026-11-26-tokentv-5-dolarlik-saat-clawd",
+   "title": "5 dolarlık AliExpress saati, Claude Code'u izleyen masa üstü piksel evcil hayvana dönüştü",
+   "summary": "TokenTV, yaklaşık 5 dolarlık GeekMagic SmallTV saat ekranında Claude Code ve Codex çalışırken tepki veren piksel evcil hayvanlar ve kullanım limitlerini gösteren ücretsiz ve açık kaynak (MIT) bir proje; saatin yazılımını değiştirmek (firmware yüklemek) gerekmiyor. Saat almadan tarayıcıdaki canlı demoya bakabiliyor ya da 'npx token-tv demo' ile deneyebiliyorsun; gerçek kurulum sürekli açık bir bilgisayarda 'npx token-tv start' ile çalışıyor. Hacker News'te küçük ama sevimli bulunan bir paylaşım oldu; README kurulumu bir yapay zekâ ajanına da yaptırabileceğini söylüyor.",
+   "url": "https://github.com/click6067-ship-it/token-tv",
+   "source": "Hacker News (Show HN) / GitHub",
+   "author": "click6067",
+   "lang": "en",
+   "topic": "farkli",
+   "day": "2026-11-26",
+   "order": 5,
+   "tryIt": "Saat almadan önce canlı demoyu aç, sonra bir yapay zekâya projenin kullanım bilgisini nereden okuduğunu ve saate nasıl gönderdiğini README'ye bakarak anlattır."
+  },
+  {
+   "id": "2026-11-26-willison-uc-kirilma-noktasi",
+   "title": "Simon Willison: Son 12 ayda yapay zekâda üç kırılma noktası",
+   "summary": "Simon Willison bir konferans konuşmasını yazıya döktü ve son bir yılda üç sıçrama sayıyor. Birincisi Kasım 2025: Claude Opus 4.5 ve GPT-5.1 Codex ile kodlama ajanlarının ilk denemede doğru iş çıkarmaya başlaması, onun da her gün ajan kullanmaya geçmesi. İkincisi Haziran-Temmuz 2026: hedef ve araç verilince sorunu deneye deneye çözen 'Fable sınıfı' modeller. Üçüncüsü Eylül-Ekim 2026: modellerin three.js ve Blender'da, yani 3B ve oyun yapımında iyileşmesi; kendi strateji oyununda Opus 5.5'in 'eğlenceyi anladığını' söylüyor, Fable 5.2'nin yeni bir kırılma olup olmadığına ise henüz karar vermemiş.",
+   "url": "https://simonwillison.net/2026/Nov/24/llm-inflection-points/",
+   "source": "Blog",
+   "author": "Simon Willison",
+   "lang": "en",
+   "topic": "claude",
+   "day": "2026-11-26",
+   "order": 6,
+   "tryIt": "Yazıyı oku, sonra bir yapay zekâya bu üç kırılma noktasını yeni başlayan biri için 5 maddelik bir zaman çizelgesine çevirt."
+  },
+  {
+   "id": "2026-11-26-gamedev-agent-skills-79-tarif",
+   "title": "Kodlama ajanına oyun yapmayı öğreten 79 hazır tarif: Godot'dan pygame'e",
+   "summary": "awesome-gamedev-agent-skills, Claude Code gibi ajanlara eklenen 79 oyun geliştirme skill'inden (ajana bir işi öğreten talimat dosyası) oluşan ücretsiz bir koleksiyon (Apache-2.0); Godot, Unity, Phaser, three.js, pygame, LÖVE ve Roblox dahil 12 motoru kapsıyor. Ne istediğini anlatıyorsun, içindeki 'yönlendirici' o işe uyan 2-3 tarifi seçip yüklüyor; yapımcıya göre 366 test isteğinde yüzde 98,7 doğru seçim yapıyor (kendi ölçümü). Kurması kolay ama bir ders değil, geliştirici el kitabı: yine de bir oyun motoru ve biraz motor bilgisi gerekiyor; sayfada bir sponsor alanı da var.",
+   "url": "https://github.com/gamedev-skills/awesome-gamedev-agent-skills",
+   "source": "GitTrend",
+   "author": "Abhishek Barali",
+   "lang": "en",
+   "topic": "araclar",
+   "day": "2026-11-26",
+   "order": 7,
+   "tryIt": "Claude Code'da 'claude plugin marketplace add gamedev-skills/awesome-gamedev-agent-skills' ve 'claude plugin install gamedev@awesome-gamedev-agent-skills' yaz, sonra 'pygame ile tek ekranlı basit bir oyun yap, hangi skill'leri kullandığını da söyle' de."
+  },
   {
    "id": "2026-11-25-artifact-uygulama-olarak-kur",
    "title": "Claude'un yaptığı bir sayfayı bilgisayarına ayrı bir uygulama olarak kurabilirsin",
