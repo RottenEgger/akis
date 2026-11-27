@@ -1,6 +1,45 @@
 {
- "guncellendi": "2026-11-27T08:56+00:00",
+ "guncellendi": "2026-11-27T19:31+00:00",
  "icerikler": [
+  {
+   "id": "2026-11-27-aile-goc-hikayesi-skill",
+   "title": "e-Devlet soyağacından Türkçe seslendirmeli göç haritası videosu yapan Claude Code skill'i",
+   "summary": "prompts.chat'in yapımcısı Fatih Kadir Akın, 26 Kasım'da 'Aile Göç Hikâyesi' adlı ücretsiz ve açık kaynak (MIT) bir Claude Code skill'i (ajana bir işi öğreten talimat paketi) yayımladı. e-Devlet'ten indirdiğin Alt-Üst Soy Bilgisi PDF'ini ya da bir GEDCOM soyağacı dosyasını veriyorsun; Claude ailenin yaşadığı yerleri o yıllar için Osmanlı arşiv kataloğu, salnameler, nüfus sayımları ve akademik kaynaklarda araştırıyor, her bulguyu 'belgeli, olası, aile anlatısı, tahmin' diye işaretleyip bir rapor çıkarıyor, sonra Remotion (kodla video yapan araç) ile Türkçe seslendirmeli bir göç haritası videosu hazırlıyor. Seslendirme ve kontrol bilgisayarında yerel olarak yapılıyor, aramalarda isim değil yalnızca yer ve yıl kullanılıyor; ama soyağacın Claude sohbetinde işleniyor ve bulgular yine de kaynağından kontrol edilmeli.",
+   "url": "https://github.com/f/family-migration-story",
+   "source": "GitHub",
+   "author": "Fatih Kadir Akın",
+   "lang": "tr",
+   "topic": "farkli",
+   "day": "2026-11-27",
+   "order": 1,
+   "tryIt": "Önce depodaki 2 dakikalık örnek videoyu izle; beğenirsen Claude Code'da '/plugin marketplace add f/family-migration-story' ve '/plugin install family-migration-story@family-migration-story' yazıp soyağacı dosyanı ver ve önce yalnızca raporu iste."
+  },
+  {
+   "id": "2026-11-27-claude-aylik-ozet-reflect",
+   "title": "Claude'un 'aylık özet' sayfası betadan çıktı: bu ay Claude'u nasıl kullandın?",
+   "summary": "Claude'un sürüm notlarına göre 24 Kasım'da Reflect, yani aylık özet sayfası betadan çıktı ve ücretsiz plan dahil Free, Pro, Max ve Ultra'da web, masaüstü, iOS ve Android'de açılıyor (Team ve Enterprise'da yok). Sayfa en aktif gününü ve saatini, Claude'u hangi konularda kullandığını yüzde olarak, 'işi devretme, tarif etme, ayırt etme, özen' başlıklarında yapay zekâ kullanma becerine dair notları ve 'denenecek 2 şey' önerisini gösteriyor; ücretli planlarda hedef koyup düzenli kontrol de kurulabiliyor. Bulut Claude Code oturumlarını da okuyor; ama hafızanın açık olması gerekiyor ve gizli sohbetler ile yalnızca bilgisayarında çalışan oturumlar dahil edilmiyor. Saklanan özetler tek tuşla, geri alınamaz biçimde silinebiliyor.",
+   "url": "https://support.claude.com/en/articles/15672559-see-your-monthly-recap",
+   "source": "Claude Yardım Merkezi",
+   "author": "Anthropic",
+   "lang": "en",
+   "topic": "ozellik",
+   "day": "2026-11-27",
+   "order": 5,
+   "tryIt": "Ayarlar > Wellbeing > Reflect > View yolunu izle, 'denenecek 2 şey' önerisini bir hafta boyunca uygula ve gelecek ayın özetinde değişip değişmediğine bak."
+  },
+  {
+   "id": "2026-11-27-alcock-kitabin-hedeflerini-ogret",
+   "title": "Bir öğretmen kendi kitabını Claude'a verdi: 'hedeflerini çıkar, bana tek tek öğret'",
+   "summary": "Öğretmen Phillip Alcock, yeni çıkan kendi kitabının PDF'ini Claude sohbetine ekleyip önce kitabın öğrenme hedeflerini bir liste olarak istedi, sonra her hedefi tek tek öğretmesini ve her birinin sonunda bir kontrol sorusu sormasını söyledi. Kitapta ayrı bir 'hedefler' bölümü olmadığı için Claude sekiz hedefi bölümlerden kendisi çıkardı; Alcock listeyi bölümlerle karşılaştırarak nasıl kontrol ettiğini ve ilk hedefin kontrol sorusunu nasıl cevapladığını adım adım gösteriyor. Yazı ücretsiz okunabiliyor; Alcock'un kendi kitabını tanıttığını da bilmek gerek.",
+   "url": "https://aiworkflowsforteachers.substack.com/p/i-asked-claude-to-teach-me-the-learning",
+   "source": "Newsletter (AI for Teachers)",
+   "author": "Phillip Alcock",
+   "lang": "en",
+   "topic": "egitim",
+   "day": "2026-11-27",
+   "order": 6,
+   "tryIt": "Çalıştığın bir kitabın bir bölümünü Claude'a ver ve 'bu bölümün öğrenme hedeflerini çıkar, sonra her birini bana tek tek öğret ve her hedefin sonunda cevabını vermeden bir kontrol sorusu sor' de; listeyi bölüm başlıklarıyla karşılaştır."
+  },
   {
    "id": "2026-11-26-bilal-turan-altin-hirsi-steam-oyunu",
    "title": "Claude Code ile Steam'e oyun yapıyor: dört madencili Altın Hırsı",
